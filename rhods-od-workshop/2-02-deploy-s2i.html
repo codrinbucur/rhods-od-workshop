@@ -129,7 +129,7 @@
 <p>Now that the model has been deployed, we&#8217;re ready to build its client as a container image, create an OpenShift deployment, and have it running as a service you will be able to call from any other application.</p>
 </div>
 <div class="paragraph">
-<p>This repository was created as a source-to-image Python application. You can see the template <a href="https://github.com/opendatahub-io/odh-s2i-project-simple">GitHub repository</a> and try for yourself.</p>
+<p>This repository was created as a source-to-image (S2I) Python application. You can see the template <a href="https://github.com/opendatahub-io/odh-s2i-project-simple">GitHub repository</a> and try for yourself.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -138,16 +138,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/mamurak/object-detection-rest/blob/master/wsgi.py">wsgi.py</a> - the main entrypoint for the python application and calls the prediction function.</p>
+<p><a href="https://github.com/mamurak/object-detection-rest/blob/master/wsgi.py">wsgi.py</a> - the main entry point for the python application and calls the prediction function.</p>
 </li>
 <li>
-<p><a href="https://github.com/mamurak/object-detection-rest/blob/master/prediction.py">prediction.py</a> -which contains the function the data scientist has extracted to make predictions.  Called from the application with a dictionary parameter.</p>
+<p><a href="https://github.com/mamurak/object-detection-rest/blob/master/prediction.py">prediction.py</a> - contains the function the data scientist has extracted to make predictions. Called from the application with a dictionary parameter.</p>
 </li>
 <li>
 <p><a href="https://github.com/mamurak/object-detection-rest/blob/master/requirements.txt">requirements.txt</a> - where the app developer adds their python dependencies for the served application.</p>
 </li>
 <li>
-<p><a href="https://github.com/mamurak/object-detection-rest/tree/master/.s2i">s2i directory</a> - which contains files to customize the application deployment.</p>
+<p><a href="https://github.com/mamurak/object-detection-rest/blob/customize/.s2i">s2i directory</a> - which contains files to customize the application deployment.</p>
 </li>
 </ul>
 </div>
@@ -155,7 +155,7 @@
 </dl>
 </div>
 <div class="paragraph">
-<p>You can also learn more about <a href="https://access.redhat.com/documentation/en-us/red_hat_software_collections/2/html/using_red_hat_software_collections_container_images/sti">Source to Image</a> and the <a href="https://github.com/sclorg/s2i-python-container">Python builder image</a>:</p>
+<p>You can also learn more about <a href="https://access.redhat.com/documentation/en-us/red_hat_software_collections/2/html/using_red_hat_software_collections_container_images/sti">Source to Image</a> framework which allows you to write images that use the application source code as an input and produce a new image that runs the assembled application as an output, as well as the <a href="https://github.com/sclorg/s2i-python-container">Python builder image</a>.</p>
 </div>
 <div class="paragraph">
 <p>Now, let&#8217;s create the application.</p>
@@ -173,8 +173,17 @@
 <img src="_images/s2i/ocp-console.png" alt="Ocp Console">
 </div>
 </div>
-<div class="paragraph">
-<p>If you&#8217;re at the OpenShift Data Science Dashboard and need to navigate to the OpenShift Web Console, use the <strong>Application Switcher</strong> Icon in the top right of the navigation bar and click on the <strong>OpenShift Console</strong> menu item.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you&#8217;re at the RHODS Dashboard and need to navigate to the OpenShift Web Console, use the <strong>Application Switcher</strong> Icon in the top right of the navigation bar and click on the <strong>OpenShift Console</strong> menu item.
+</td>
+</tr>
+</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -184,13 +193,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>From the OpenShift Console switch to the developer view from the menu on the top left if it&#8217;s not already selected:</p>
+<p>From the <code>OpenShift Console</code> switch to the Developer Perspective from the menu on the top left if it&#8217;s not already selected:</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/s2i/dev-view.png" alt="Developer View">
+<img src="_images/s2i/dev-view.png" alt="Developer Perspective">
 </div>
 </div>
 </div>
@@ -317,25 +326,15 @@ This will result in messages in the log that look like:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Open the <strong>Deployment</strong>  options to set an evironment variable.</p>
+<p>Open the <strong>Deployment</strong>  options to set an environment variable.</p>
 </li>
 </ul>
-</div>
-<div class="imageblock unresolved">
-<div class="content">
-<img src="s2i/deployment-settings.png" alt="deployment settings">
-</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_create"><a class="anchor" href="#_create"></a>Create</h3>
 <div class="paragraph">
 <p>Everything is ready, so you can click on <strong>Create</strong>:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/s2i/create-button.png" alt="alt text">
-</div>
 </div>
 </div>
 </div>
