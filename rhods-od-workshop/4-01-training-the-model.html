@@ -179,21 +179,24 @@ With the current workshop implementation, only one training pipeline can run for
 Make sure you use the specific <code>class_labels = ['Laptop', 'Computer keyboard', 'Table']</code></p>
 </div>
 <div class="paragraph">
-<p>In order to use the reconfigure the service app created in section 2.2 to use the updated model you can try the following:</p>
+<p>In order to used the new model in the applications deployed before, you need to the reconfigure the service app created in section 2.2. You can try the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deploy the new model under <strong>Models and model servers</strong></p>
+<p>Following the guidelines from section 2.1 Service a model, deploy the new model under <strong>Models and model servers</strong></p>
 </li>
 <li>
-<p>Copy the Inference endpoint of the new model and update the PREDICTION_URL environmental variable of the service application created in section 2.2</p>
+<p>Copy the Inference endpoint of the new model</p>
 </li>
 <li>
-<p>In addition, create a ConfigMap using the <strong>OpenShift Console</strong> containing the class labels 'Laptop', 'Computer keyboard', 'Table'</p>
+<p>Using the <strong>OpenShift Console</strong> and update the PREDICTION_URL environmental variable of the service application created in section 2.2</p>
 </li>
 <li>
-<p>Add the CLASS_LABELS environmental variable pointing to the created ConfigMap to the same of the same service application</p>
+<p>In addition, while in the <strong>OpenShift Console</strong> create a ConfigMap containing the class labels 'Laptop', 'Computer keyboard', 'Table'</p>
+</li>
+<li>
+<p>In the same service application, add also the CLASS_LABELS environmental variable pointing to the created ConfigMap</p>
 </li>
 </ul>
 </div>
@@ -206,7 +209,7 @@ Make sure you use the specific <code>class_labels = ['Laptop', 'Computer keyboar
 </div>
 </div>
 <div class="paragraph">
-<p>Once the service has been redeployed and exposing the new model predictions as REST APIs, you can test the changes brought by the new model using the NodeJS app deployed in section 2.4 (which consumes the REST APIs) and using the camera / your mobile device.</p>
+<p>Once the service has been redeployed and started exposing the new model predictions as REST APIs, you can test the changes brought by the new model using the NodeJS app deployed in section 2.4 (which consumes the REST APIs) and makes use of the camera / your mobile device.</p>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="3-02-offline-scoring-pipelines.html">2. Offline Scoring Pipelines</a></span>
