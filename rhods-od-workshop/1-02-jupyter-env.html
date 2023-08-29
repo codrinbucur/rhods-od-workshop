@@ -124,10 +124,13 @@
 <article class="doc">
 <h1 class="page">1.2 The Jupyter environment</h1>
 <div class="paragraph">
-<p>You are now inside your Jupyter environment. As you can see, it&#8217;s a web-based environment, but everything you&#8217;ll do here is in fact happening on the <strong>Red Hat OpenShift Data Science</strong> cluster. This means that without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU and RAM, you can still conduct your Data Science work in this powerful and stable managed environment.</p>
+<p>You are now inside your Jupyter environment. As you can see, it&#8217;s a web-based environment, but everything you&#8217;ll do here is in fact happening on the <strong>Red Hat OpenShift Data Science</strong>, powered underneath by the <strong>OpenShift</strong> cluster. This means that without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU, GPU and RAM, you can still conduct your Data Science work in this powerful and stable managed environment.</p>
 </div>
 <div class="paragraph">
-<p>In the "file-browser" like window you&#8217;re in right now, you&#8217;ll find the files and folders that are saved inside your own personal space inside <strong>Red Hat OpenShift Data Science</strong>. It&#8217;s pretty empty right now though&#8230;&#8203; So the first thing we will do is to bring the content of the workshop inside this environment.</p>
+<p>In the "file-browser" like window you&#8217;re in right now, you&#8217;ll find the files and folders that are saved inside your own personal space inside <strong>RHODS</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s pretty empty right now though&#8230;&#8203; So the first thing we will do is to bring the content of the workshop inside this environment.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -189,39 +192,37 @@
 </div>
 </div>
 <div class="paragraph">
-<p>This JupyterLab instance also features an <strong>Object Storage Browser</strong>. Let&#8217;s connect to your S3 bucket and review its contents:</p>
+<p>Now let&#8217;s open another tab and connect to your <code>S3 Provider Console</code> with the URL provided by the workshop instructor.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Open the Object Storage Browser by selecting the bucket icon on the top of the left toolbar.</p>
-</li>
-</ul>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For simplicity, we are leveraging Minio in this case as the S3 Provider and instance has already been deployed on OpenShift next to RHODS. S3 buckets and users have been already provisioned for your convenience. For production environments we recommend scalable solutions like <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation">OpenShift Data Foundations (ODF)</a> or solutions from other storage vendors.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Log into the S3 Provider Console with the credentials provided and be able to see the dashboard, that looks like this:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/notebooks/od_icon.png" alt="od icon">
+<img src="_images/notebooks/minio_console.png" alt="S3 Provider Console">
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Fill in the settings as follows:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In <strong>Object storage endpoint</strong> write <code><a href="http://s3.openshift-storage.svc" class="bare">http://s3.openshift-storage.svc</a></code>.</p>
-</li>
-<li>
-<p>For the <strong>Access key</strong> and <strong>Secret key</strong> values, copy and paste the corresponding values from the Secret that you reviewed in the former section.</p>
+<p>Use the <code>Object Browser</code> to navigate to the bucket associated with your user name.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Select <strong>Connect</strong> to access your S3 bucket. Double click on the bucket with your user ID. You can now browse the content of your S3 bucket including a number of images and the model artifact. We will access and work with that model in the following sections.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>You can now browse the content of your S3 bucket including a number of images and the model artifact. We will access and work with that model in the following sections.</p>
 </div>
 <div class="paragraph">
 <p><a href="1-03-notebooks.html" class="xref page">Ready? Let&#8217;s go to the next section.</a></p>
