@@ -144,7 +144,7 @@ This is a new and advanced section of the workshop.
 </table>
 </div>
 <div class="paragraph">
-<p>Now is time to fine tune and train a model using RHODS and Data Science Pipelines.</p>
+<p>Now it is time to fine tune and train a model using RHODS and Data Science Pipelines.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -184,13 +184,13 @@ Make sure you use the specific <code>class_labels = ['Laptop', 'Computer keyboar
 <div class="ulist">
 <ul>
 <li>
-<p>Following the guidelines from section 2.1 Service a model, deploy the new model under <strong>Models and model servers</strong></p>
+<p>Following the guidelines from section 2.1 Serving a model, deploy the new model under <strong>Models and model servers</strong></p>
 </li>
 <li>
 <p>Copy the Inference endpoint of the new model</p>
 </li>
 <li>
-<p>Using the <strong>OpenShift Console</strong> and update the PREDICTION_URL environmental variable of the service application created in section 2.2</p>
+<p>Using the <strong>OpenShift Console</strong>, go to the service application created in section 2.2 and update the PREDICTION_URL environmental variable to the new model&#8217;s inference endpoint (effectively switching models)</p>
 </li>
 <li>
 <p>In addition, while in the <strong>OpenShift Console</strong> create a ConfigMap containing the class labels 'Laptop', 'Computer keyboard', 'Table'</p>
