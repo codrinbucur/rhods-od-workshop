@@ -160,23 +160,6 @@ Elyra is an extension of JupyterLab, which offers a graphical editor for pipelin
 <p>If you compare this pipeline with the previous offline scoring notebook, you will find the same steps. In fact, the pipeline includes the very same code since the pipeline tasks represent the underlying Python modules of the notebook steps. While the notebook defines a purely linear sequence of steps, the pipeline allows to parallelize tasks such as ingesting the raw data and downloading the trained model, both of which are independent of each other.</p>
 </li>
 <li>
-<p>Before you can submit this pipeline for execution, you will have to update a few configuration parameters via the <code>Open Panel</code> button in the top right corner of the pipeline editor window:
-image::notebook/open-panel.png</p>
-<div class="ulist">
-<ul>
-<li>
-<p>In <strong>Data Volumes</strong>, under <strong>Persistent Volume Claim Name</strong> enter your user ID.</p>
-</li>
-<li>
-<p>Under <strong>Environment Variables</strong>, copy and paste the access key and secret key of your S3 bucket into the corresponding fields. Under <strong>S3_BUCKET_NAME</strong>, enter your user ID.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Save the pipeline (third button in top toolbar of the pipeline editor).</p>
-</li>
-<li>
 <p>Submit the pipeline by selecting <code>Run Pipeline</code> (second button in top toolbar). Change the pipeline name to your user ID to distinguish its run from those of the other workshop participants. Click <code>OK</code>.</p>
 </li>
 <li>
